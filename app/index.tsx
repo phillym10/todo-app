@@ -11,9 +11,13 @@ export default function Index() {
 	const addTodo = () => setShowAddTodo(true);
 	const cancelAddTodo = () => setShowAddTodo(false);
 	const createTodo = () => {
-		setTodos((prev) => [todo, ...prev]);
-		setShowAddTodo(false)
-		setTodo('')
+		if (todo == '') {
+			alert("Please enter something in your todo !")
+		} else {
+			setTodos((prev) => [todo, ...prev]);
+			setShowAddTodo(false)
+			setTodo('')
+		}
 	}
 
 	return (
